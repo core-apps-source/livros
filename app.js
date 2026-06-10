@@ -1,10 +1,10 @@
 const pages = [
-  { src: "assets/p6.jpg", label: "Página 113 de 175", percent: "61%" },
-  { src: "assets/p5.jpg", label: "Página 113 de 175", percent: "62%" },
-  { src: "assets/p4.jpg", label: "Página 114 de 175", percent: "62%" },
-  { src: "assets/p3.jpg", label: "Página 114 de 175", percent: "62%" },
-  { src: "assets/p2.jpg", label: "Página 115 de 175", percent: "63%" },
-  { src: "assets/p1.jpg", label: "Página 115 de 175", percent: "63%" },
+  { src: "./assets/p6.jpg", label: "Página 113 de 175", percent: "61%" },
+  { src: "./assets/p5.jpg", label: "Página 113 de 175", percent: "62%" },
+  { src: "./assets/p4.jpg", label: "Página 114 de 175", percent: "62%" },
+  { src: "./assets/p3.jpg", label: "Página 114 de 175", percent: "62%" },
+  { src: "./assets/p2.jpg", label: "Página 115 de 175", percent: "63%" },
+  { src: "./assets/p1.jpg", label: "Página 115 de 175", percent: "63%" },
 ];
 
 const storageKey = "kindle-demo-state";
@@ -58,6 +58,7 @@ function clamp(value, min, max) {
 
 function render(animate = true) {
   const page = pages[state.index];
+  pageSlider.max = String(pages.length - 1);
   pageImage.src = page.src;
   pageImage.alt = `Página ${state.index + 1} do livro de teste`;
   pageLabel.textContent = `${page.label}  |  teste ${state.index + 1} de ${pages.length}`;
