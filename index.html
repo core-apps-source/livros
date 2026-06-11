@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Leitor Kindle - Dotcom Secrets</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="reader-shell" data-theme="light">
+      <header class="topbar" aria-label="Controles do leitor">
+        <div class="book-meta">
+          <span class="book-title">Dotcom Secrets - Traduzido</span>
+          <span class="book-subtitle">Livro completo em PDF</span>
+        </div>
+
+        <nav class="toolbar" aria-label="Preferencias">
+          <button class="icon-button" id="decreaseZoom" type="button" aria-label="Diminuir pagina">A-</button>
+          <button class="icon-button" id="increaseZoom" type="button" aria-label="Aumentar pagina">A+</button>
+          <select id="themeSelect" aria-label="Tema do leitor">
+            <option value="light">Claro</option>
+            <option value="sepia">Sepia</option>
+            <option value="dark">Escuro</option>
+          </select>
+          <select id="fitSelect" aria-label="Ajuste da pagina">
+            <option value="height">Altura</option>
+            <option value="width">Largura</option>
+          </select>
+          <button class="icon-button" id="fullscreenButton" type="button" aria-label="Tela cheia">[]</button>
+        </nav>
+      </header>
+
+      <section class="reading-area" aria-label="Pagina do livro">
+        <button class="page-zone page-zone-left" id="prevZone" type="button" aria-label="Pagina anterior"></button>
+        <figure class="page-frame" id="pageFrame">
+          <canvas id="pageCanvas" aria-label="Pagina 1 do livro"></canvas>
+        </figure>
+        <button class="page-zone page-zone-right" id="nextZone" type="button" aria-label="Proxima pagina"></button>
+      </section>
+
+      <footer class="bottombar">
+        <button class="nav-button" id="prevButton" type="button">Anterior</button>
+        <div class="progress-wrap">
+          <div class="progress-labels">
+            <span id="pageLabel">Pagina 1 de 284</span>
+            <span id="percentLabel">17%</span>
+          </div>
+          <input id="pageSlider" type="range" min="0" value="0" aria-label="Ir para pagina" />
+        </div>
+        <button class="nav-button" id="nextButton" type="button">Proxima</button>
+      </footer>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
